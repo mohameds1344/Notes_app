@@ -5,7 +5,7 @@ class CustomBotton extends StatelessWidget {
   CustomBotton({super.key, required this.title, this.onTap});
   String title;
 
-  VoidCallback? onTap;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +21,7 @@ class CustomBotton extends StatelessWidget {
             color: KPrimaryColor,
             borderRadius: BorderRadius.circular(8),
             boxShadow: [
-              BoxShadow(
-                spreadRadius: 1,
-                blurRadius: 10,
-                offset: Offset(0, 5),
-              ),
+              BoxShadow(spreadRadius: 1, blurRadius: 10, offset: Offset(0, 5)),
             ],
           ),
           child: Center(
