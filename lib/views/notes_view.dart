@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/constants.dart';
 import 'package:notes_app/widgets/add_note_bottom_sheet.dart';
 import 'package:notes_app/widgets/notes_view_body.dart';
 
@@ -9,23 +8,46 @@ class NotesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       body: const NostesViewBody(),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor:KPrimaryColor,
-        onPressed: () {
-          showModalBottomSheet(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadiusGeometry.circular(16)
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(bottom: 30, right: 10),
+        child: Container(
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black12.withOpacity(0.5),
+                blurRadius: 15,
+                spreadRadius: 1,
+                offset: Offset(-7, 8),
+              ),
+            ],
+          ),
+          child: SizedBox(
+            height: 70,
+            width: 70,
+            child: FloatingActionButton(
+              backgroundColor: Color(0xff252525),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(35),
+              ),
+              onPressed: () {
+                showModalBottomSheet(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadiusGeometry.circular(16),
+                  ),
+                  context: context,
+                  builder: (context) {
+                    return AddNoteBottomSheet();
+                  },
+                );
+              },
+              child: Icon(Icons.add, color: Colors.white, size: 40),
             ),
-            context: context,
-            builder: (context) {
-              return AddNoteBottomSheet();
-            },
-          );
-        },
-        child: Icon(Icons.add,color: Colors.black,),
+          ),
+        ),
       ),
     );
   }
 }
-

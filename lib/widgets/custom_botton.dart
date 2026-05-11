@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/constants.dart';
 
 class CustomBotton extends StatelessWidget {
-  CustomBotton({super.key, required this.title, this.onTap});
-  String title;
+  const CustomBotton({super.key, required this.title, required this.onTap});
+  final String title;
 
   final void Function()? onTap;
 
@@ -18,7 +18,7 @@ class CustomBotton extends StatelessWidget {
           height: 50,
 
           decoration: BoxDecoration(
-            color: KPrimaryColor,
+            color: kPrimaryColor,
             borderRadius: BorderRadius.circular(8),
             boxShadow: [
               BoxShadow(spreadRadius: 1, blurRadius: 10, offset: Offset(0, 5)),

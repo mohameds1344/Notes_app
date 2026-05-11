@@ -19,17 +19,19 @@ class CustomTextField extends StatelessWidget {
       validator: (value) {
         if (value?.isEmpty ?? true) {
           return 'Field is required';
+        } else {
+          return null;
         }
       },
       onSaved: onSaved,
       maxLines: maxLine,
-      cursorColor: KPrimaryColor,
+      cursorColor: kPrimaryColor,
       decoration: InputDecoration(
         hintText: hint,
 
         border: buildBorder(),
         enabledBorder: buildBorder(),
-        focusedBorder: buildBorder(KPrimaryColor),
+        focusedBorder: buildBorder(kPrimaryColor),
       ),
     );
   }

@@ -11,8 +11,16 @@ class CustomAppBar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
       children: [
-        Text(title, style: TextStyle(fontSize: 22)),
-        IconButton(onPressed: () {}, icon: Icon(icon, size: 24)),
+        Text(title, style: TextStyle(fontSize: 30)),
+        Container(
+          height: 55,
+          width: 55,
+          decoration: BoxDecoration(
+            color: Color(0xff3B3B3B),
+            borderRadius: BorderRadius.circular(16)
+          ),
+          child: IconButton(onPressed: () {}, icon: Icon(icon, size: 24)),
+        )
       ],
     );
   }
