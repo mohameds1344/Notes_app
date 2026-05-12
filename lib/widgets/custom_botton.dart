@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/constants.dart';
 
 class CustomBotton extends StatelessWidget {
-  const CustomBotton({super.key, required this.title, required this.onTap});
+  const CustomBotton({super.key, required this.title, required this.onTap,this.isLoading = false});
   final String title;
 
   final void Function()? onTap;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,9 @@ class CustomBotton extends StatelessWidget {
             ],
           ),
           child: Center(
-            child: Text(
+            child:isLoading ? const CircularProgressIndicator(
+              color: Colors.black,
+            ) :  Text(
               title,
               style: TextStyle(
                 color: Colors.black,
